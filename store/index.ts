@@ -1,12 +1,23 @@
-import { createStore, Store } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
-import { initialState, reducer } from './reducer'
+import { Store } from 'redux'
+import { configureStore } from 'redux-starter-kit'
+import { useSelector } from 'react-redux'
+import reducer from './reducer'
+
 // ______________________________________________________
 //
-export type StoreState = ReturnType<typeof initialState>
+export type StoreState = ReturnType<typeof reducer>
 export type ReduxStore = Store<StoreState>
 // ______________________________________________________
 //
-export function initStore(state = initialState()) {
-  return createStore(reducer, state, composeWithDevTools())
+
+export function initStore(state: StoreState) {
+  return configureStore({
+    preloadedState: state,
+    reducer
+  })
 }
+
+export const useCounterItem = () =>
+  useSelector((state: StoreState) => state.counter)
+export const useTodosItem = () =>
+  useSelector((state: StoreState) => state.todos)
