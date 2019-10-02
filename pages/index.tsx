@@ -1,5 +1,4 @@
 import React from 'react'
-import { NextContext } from 'next'
 import Head from 'next/head'
 import Component from '../components/index'
 // ______________________________________________________
@@ -10,7 +9,7 @@ type Props = {
 // ______________________________________________________
 //
 class App extends React.Component<Props> {
-  static async getInitialProps(ctx: NextContext): Promise<Props> {
+  static async getInitialProps(): Promise<Props> {
     return { title: 'Hello world' }
   }
   render() {
