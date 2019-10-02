@@ -1,16 +1,10 @@
-import { combineReducers } from 'redux'
-// ______________________________________________________
-//
-import * as Counter from './counter'
-import * as Todos from './todos'
+import { combineReducers } from 'redux-starter-kit'
+import counterModule from './counter'
+import todosModule from './todos'
 
-export function initialState() {
-  return {
-    counter: Counter.initialState(),
-    todos: Todos.initialState()
-  }
-}
-export const reducer = combineReducers({
-  counter: Counter.reducer,
-  todos: Todos.reducer
+const rootReducer = combineReducers({
+  counter: counterModule.reducer,
+  todos: todosModule.reducer
 })
+
+export default rootReducer
