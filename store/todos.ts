@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from 'redux-starter-kit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 // ______________________________________________________
 //
 interface Todo {
@@ -8,7 +8,7 @@ interface Todo {
 }
 
 const todosModule = createSlice({
-  slice: 'todos',
+  name: 'todos',
   initialState: [] as Todo[],
   reducers: {
     addTodo: (state, action: PayloadAction<Todo>) => {
