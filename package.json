@@ -9,13 +9,13 @@
     "prettier": "prettier './components/**/*.tsx' './store/**/*.ts' --write"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.1.0",
     "next": "^9.0.7",
     "next-redux-wrapper": "^4.0.0",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-redux": "^7.0.1",
     "redux": "^4.0.1",
-    "redux-starter-kit": "^0.7.0",
     "styled-components": "^4.4.0",
     "uuid": "^3.3.2"
   },

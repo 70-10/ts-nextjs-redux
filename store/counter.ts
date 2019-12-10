@@ -1,7 +1,7 @@
-import { createSlice, PayloadAction } from 'redux-starter-kit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 const counterModule = createSlice({
-  slice: 'counter',
+  name: 'counter',
   initialState: { count: 0 },
   reducers: {
     increment: state => {
